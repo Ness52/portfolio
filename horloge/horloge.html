@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Horloge analogique</title>
+    <style media="screen">
+
+    body
+    {
+      background-image: url('horloge.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: 50% 50%;
+    }
+
+    #contour
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: transparent;
+      border: 10px solid black;
+      width: 300px;
+      height: 300px;
+      margin: auto;
+      border-radius: 50%;
+    }
+
+    .trotteuse
+    {
+      width: 150px;
+      height: 2px;
+      background-color: red;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: 100%;
+    }
+
+    .minute
+    {
+      width: 150px;
+      height: 5px;
+      background-color: grey;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: 100%;
+
+    }
+
+    .heure
+    {
+      width: 100px;
+      height: 5px;
+      background-color: grey;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 16.7%;
+      transform-origin: 100%;*
+    }
+
+    .centre
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
+
+
+    </style>
+  </head>
+  <body>
+
+
+<div id="contour">
+
+  <div class="trotteuse">
+
+  </div>
+
+  <div class="minute">
+
+  </div>
+
+  <div class="heure">
+
+  </div>
+
+</div>
+
+<div class='centre'></div>
+
+<script type="text/javascript">
+
+
+function setDate(){
+
+  const now = new Date();
+  const sec = now.getSeconds();
+  const secDeg = ((sec / 60) * 360) + 90;
+  document.querySelector('.trotteuse').style.transform = 'rotate(' + secDeg + 'deg)';
+
+  const min = now.getMinutes();
+  const minDeg = ((min / 60) * 360) + 90;
+  document.querySelector('.minute').style.transform = 'rotate(' + minDeg + 'deg)' ;
+
+  const hour = now.getHours();
+  const hourDeg = ((hour / 12) * 360) + 90 ;
+  document.querySelector('.heure').style.transform = 'rotate(' + hourDeg + 'deg)' ;
+
+}
+
+setInterval(setDate, 1000);
+
+
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quote Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <style media="screen">
+
+    body
+    {
+      background-color: lightblue;
+      font-family: arial;
+    }
+
+    #container
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+      width: 50%;
+      height: 30%;
+      text-align: center;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .fa.fa-quote-left
+    {
+      font-size: 2em;
+      float: left;
+      padding: 15px;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+    }
+
+    .fa.fa-quote-right
+    {
+      font-size: 2em;
+      float: right;
+      padding: 15px;
+      position: absolute;
+      right: 0%;
+      bottom: 0%;
+    }
+
+    .texte
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 80%;
+      word-wrap: break-word;
+      line-height: 1.5em;
+    }
+
+    .texte em
+    {
+      float: right;
+    }
+
+    .changementImage
+    {
+      position: absolute;
+      bottom: 3%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    button
+    {
+      border: none;
+      background-color: lightblue ;
+      outline: none;
+      border-radius: 5px;
+      padding: 10px;
+      color: white;
+    }
+
+    button:hover
+    {
+      box-shadow: 1px 1px 10px grey ;
+      cursor: pointer;
+    }
+
+    h1
+    {
+      text-align: center;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%,-10%);
+    }
+
+    .logo
+    {
+      position: absolute;
+      left: 10%;
+      bottom: 0%;
+    }
+
+    .logo img
+    {
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo img:hover
+    {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 480px) {
+
+      #container
+      {
+        width: 80%;
+        height: 80%;
+      }
+
+    }
+
+    </style>
+  </head>
+  <body>
+
+<h1>Générateur de citations aléatoires</h1>
+
+<div id="container">
+  <i class="fa fa-quote-left"></i>
+
+  <div class="texte">
+
+  </div>
+
+<div class="logo">
+
+<a href="">
+  <img src="http://pnd-rdc.net/wp-content/uploads/2017/12/logo-twitter-rond.png" alt="twitter">
+</a>
+
+</div>
+
+  <i class="fa fa-quote-right"></i>
+
+  <div class="changementImage">
+  <button type="button" id="suivant">Nouvelle citation</button>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+var citations = [
+  {
+    "quote": "Le succès c'est d'aller d'échec en échec sans perdre de son enthousiasme.",
+    "author": "Winston Churchill"
+  },
+  {
+    "quote": "J'ai appris que les gens oublieront ce que vous avez dit, ils oublieront ce que vous avez fait, mais ils n'oublieront jamais ce que vous leur avez fait ressentir.",
+    "author": "Maya Angelou"
+  },
+  {
+    "quote": "Nous sommes ce que nous faisons de manière répétitive. L'Excellence n'est donc pas un acte mais une Habitude.",
+    "author": "Aristote"
+  }
+];
+
+var nb = Math.floor(Math.random() * citations.length) ;
+
+document.querySelector('.texte').innerHTML = '<div class="texte">' + '<h3>' + citations[nb].quote + '</h3>' + '<em>' + citations[nb].author + '</em>' + '</div>' ;
+
+document.getElementById('suivant').onclick = function(){
+  nb = Math.floor(Math.random() * citations.length) ;
+  document.querySelector(".texte").innerHTML = '<div class="texte">' + '<h3>' + citations[nb].quote + '</h3>' + '<em>' + citations[nb].author + '</em>' + '</div>' ;
+}
+
+document.querySelector('a[href=""]').href = 'https://twitter.com/intent/tweet?text=' + citations[nb].quote + ' - ' + citations[nb].author ;
+
+
+</script>
+
+
+  </body>
+</html>

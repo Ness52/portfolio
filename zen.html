@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ambiance détente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="screen">
+
+    html, body
+    {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body
+    {
+      font-family: calibri;
+    }
+
+    #container
+    {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 100%;
+    }
+
+    img
+    {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      align-self: center;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    img:hover
+    {
+      box-shadow: 1px 1px 10px;
+      cursor: pointer;
+    }
+
+    audio
+    {
+      display: none;
+    }
+
+    @media (max-width: 720px){
+
+      #container
+      {
+        flex-direction: column;
+      }
+
+      img
+      {
+        padding-bottom: 15px ;
+        padding-top: 15px ;
+      }
+
+    }
+
+    </style>
+  </head>
+  <body>
+
+
+    <audio controls loop id='mer'>
+      <source src="https://dl.dropbox.com/s/rqlihrsbc2d5nuc/mer.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls loop id='oiseaux'>
+      <source src="https://dl.dropbox.com/s/418ud76o4w8r84c/oiseaux.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls loop id='feu'>
+      <source src="https://dl.dropbox.com/s/o29wkl2uitw4wee/fire.wav" type="audio/wav">
+    </audio>
+
+<div id="container">
+
+
+<img src="https://previews.dropbox.com/p/thumb/AAO9nF0DS_Bn7G6Mbo5-GlzwstioR1nY6rB0_OTB69-Q2Obm5r5kQPutUMZcOR9dU34zJXWgGx_4fmWfwnwXgTdRXFbsmcBGy4Qd2vBsu07q0lQgSArHuqNCqQFcrJbrGbEhtSLpTZ3qAjACzeWGrbjaKgmfO3CrXsuLY7pBYkcBMw/p.jpeg?size=1280x960&size_mode=3" alt="water" onclick="jouer('mer')">
+
+<img src="https://previews.dropbox.com/p/thumb/AANAzmfQMiGBkDl71EYVmj5lBRZUdklF-dNbS1t0QgTmAKHKo8wq6GObZHB3LsZiq1ec3pPu3jnn20gxyl-LQeDypergDL5aFzNrJuEQuw4DFyY3HzegM5DbmkquNwVrgggy90M-jeC0lwR9e7drCN6-_4voHEC53Aq0cBr9zcR-SQ/p.jpeg?size=1280x960&size_mode=3" alt="mesange" onclick="jouer('oiseaux')">
+
+<img src="https://previews.dropbox.com/p/thumb/AAPzjrkDVH9n8BVQp9OPuocOAvwBdJPPaf-2d8eN4s_pcSCEyodhT58e_ilLcWN_bFdBLoLnULWgNSwmCTYnnc7gnXAqjrKMuGWBNZN3fr_rw9Dy2eHeln3pRUnMHsOt53gNj7oBORQ7TgJE-B9Vt3XrmFb9lf6FgKVhIGJ3AXclNA/p.jpeg?size=1280x960&size_mode=3" alt="fire" onclick="jouer('feu')">
+
+</div>
+
+
+<script type="text/javascript">
+
+
+function jouer(id){
+  var son = document.getElementById(id) ;
+
+  if(son.paused){
+    son.play();
+  }
+  else {
+    son.pause();
+  }
+
+}
+
+
+
+</script>
+
+
+  </body>
+</html>
