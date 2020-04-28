@@ -224,6 +224,9 @@
 
 <script type="text/javascript">
 
+  // Cache la barre d'adresse du navigateur
+  window.scrollTo(0, 1);
+  
 var resRendu ;
 var resArendre = 0 ;
 
@@ -238,7 +241,7 @@ document.querySelector('input').value = random;
 
 //Génère la somme payée
 if(random < 500){
-  document.getElementById('rendu').innerHTML = "<img class='billet' src='images/200.jpg' alt='200'><img class='billet' src='images/200.jpg' alt='200'>" ;
+  document.getElementById('rendu').innerHTML = "<img class='billet' src='images/200.jpg' alt='200'>" + "<img class='billet' src='images/200.jpg' alt='200'>" ;
   resRendu = 400 ;
 }
 if(random < 200){
