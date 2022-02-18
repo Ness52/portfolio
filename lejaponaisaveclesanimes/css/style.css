@@ -328,6 +328,11 @@ button[name="menu"]
   text-align: center;
 }
 
+a
+{
+  color: "inherit";
+}
+
 @media (max-width: 1000px) {
 
   .menu
