@@ -330,7 +330,7 @@ button[name="menu"]
 
 a
 {
-  color: "inherit";
+  color: inherit;
 }
 
 @media (max-width: 1000px) {
