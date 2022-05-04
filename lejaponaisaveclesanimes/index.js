@@ -455,9 +455,9 @@ var vocabulaire = [
   },
   {
     mot : "出",
-    transcription : "出かす (出来す)",
-    furigana : "でかす",
-    traduction : "faire, accomplir, commettre, achever"
+    transcription : "出かける",
+    furigana : "でかける",
+    traduction : "sortir, sortir de chez soi"
   },
   {
     mot : "間",
@@ -476,18 +476,6 @@ var vocabulaire = [
     transcription : "間違える",
     furigana : "まちがえる",
     traduction : "se tromper"
-  },
-  {
-    mot : "",
-    transcription : "",
-    furigana : "",
-    traduction : ""
-  },
-  {
-    mot : "",
-    transcription : "",
-    furigana : "",
-    traduction : ""
   }
 ];
 // Fin Demon Slayer - Opening 1
